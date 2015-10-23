@@ -10,7 +10,7 @@ gameApp.controller('GameListController', function($scope) {
 });
 gameApp.controller('GameViewController', function($scope, $routeParams){
     $scope.gameId = $routeParams.gameId;
-    console.dir(gameid);
+    console.dir($scope);
     $scope.game = null;
     angular.forEach($scope.games, function(scopeGame){
         console.dir(scopeGame);
@@ -18,6 +18,7 @@ gameApp.controller('GameViewController', function($scope, $routeParams){
             $scope.game = scopeGame;
         }
     });
+    console.dir($scope);
 });
 
 gameApp.config(function($routeProvider) {
