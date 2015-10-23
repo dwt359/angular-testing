@@ -9,15 +9,15 @@ gameApp.controller('GameListController', function($scope) {
     ];
 });
 gameApp.controller('GameViewController', function($scope, $routeParams){
-    var gameid = $routeParams.gameId;
+    $scope.gameId = $routeParams.gameId;
     console.dir(gameid);
     $scope.game = null;
     angular.forEach($scope.games, function(scopeGame){
         console.dir(scopeGame);
-        if(scopeGame.gameId == gameid){
+        if(scopeGame.gameId == $scope.gameId){
             $scope.game = scopeGame;
         }
-    })
+    });
 });
 
 gameApp.config(function($routeProvider) {
