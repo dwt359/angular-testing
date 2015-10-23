@@ -10,15 +10,18 @@ gameApp.controller('GameListController', function($scope) {
 });
 gameApp.controller('GameViewController', function($scope, $routeParams){
     $scope.gameId = $routeParams.gameId;
-    console.dir($scope);
+    $scope.games = [
+        {gameId: 1, name: "Legend of Zelda: Ocarina of Time", system: "N64", desc: "Link saves zelda and stuff"},
+        {gameId: 2, name: "Portal", system: "PC", desc: "Shoot some holes in walls to solve puzzles"},
+        {gameId: 3, name: "Gladius", system: "Gamecube", desc: "Like fire emblem but weirder and awesome"},
+        {gameId: 4, name: "Pikmin", system: "Gamecube", desc: "Command a bunch of carrot-shaped weirdos as a tiny spaceman"}
+    ];
     $scope.game = null;
     angular.forEach($scope.games, function(scopeGame){
-        console.dir(scopeGame);
         if(scopeGame.gameId == $scope.gameId){
             $scope.game = scopeGame;
         }
     });
-    console.dir($scope);
 });
 
 gameApp.config(function($routeProvider) {
