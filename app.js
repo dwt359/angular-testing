@@ -8,8 +8,14 @@ gameApp.controller('GameListController', function($scope) {
         {gameId: 4, name: "Pikmin", system: "Gamecube", desc: "Command a bunch of carrot-shaped weirdos as a tiny spaceman"}
     ];
 });
-gameApp.controller('GameViewController', function($scope){
-
+gameApp.controller('GameViewController', function($scope, $routeParams){
+    var gameid = $routeParams.gameId;
+    $scope.game = null;
+    $.forEach($scope.games, function(scopeGame){
+        if(scopeGame.gameId == gameid){
+            $scope.game = scopeGame;
+        }
+    })
 });
 
 gameApp.config(function($routeProvider) {
