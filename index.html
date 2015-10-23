@@ -8,13 +8,6 @@
     <script type="text/javascript" src="./app.js"></script>
 </head>
 <body>
-<h1>Games!</h1>
-<div ng-controller="GameListController as gameList">
-    <ul class="unstyled">
-        <li ng-repeat="game in gameList.games">
-            <strong>{{game.name}}</strong> for {{game.system}}
-        </li>
-    </ul>
-</div>
+<div ng-view></div>
 </body>
 </html>
