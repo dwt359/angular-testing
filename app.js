@@ -1,11 +1,11 @@
 gameApp = angular.module('gameApp', ['ngRoute']);
 
-gameApp.controller('GameListController', function($scope) {
+gameApp.controller('GameListController', function($scope, $http) {
     $http.get('games.json').success(function(data) {
         $scope.games = data;
     });
 });
-gameApp.controller('GameViewController', function($scope, $routeParams){
+gameApp.controller('GameViewController', function($scope, $routeParams, $http){
     $scope.gameId = $routeParams.gameId;
     $http.get('games.json').success(function(data) {
         $scope.games = data;
