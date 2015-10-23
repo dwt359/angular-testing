@@ -11,11 +11,11 @@ gameApp.controller('GameListController', function($scope) {
 gameApp.controller('GameViewController', function($scope, $routeParams){
     var gameid = $routeParams.gameId;
     $scope.game = null;
-    $.forEach($scope.games, function(scopeGame){
-        if(scopeGame.gameId == gameid){
-            $scope.game = scopeGame;
+    for(var i = 0; i < $scope.games.length; i++){
+        if($scope.games[i].gameId == gameid){
+            $scope.game = $scope.games[i];
         }
-    })
+    }
 });
 
 gameApp.config(function($routeProvider) {
